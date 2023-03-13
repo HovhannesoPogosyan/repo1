@@ -173,4 +173,5 @@ void fnc2(int num1)
          std:: cout <<"YOU  WIN" << std::endl;
         std::cout <<"count="<< cnt << std::endl;
 }
+                std::cout<<std::endl;
                                                                                        
