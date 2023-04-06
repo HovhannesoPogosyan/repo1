@@ -12,7 +12,7 @@ private:
 public:
 	SmartArray();
 	SmartArray(int size);
-		
+
 	int get_size();	
 	int get_valeue(int index);	
 	void push_back(int valeue);

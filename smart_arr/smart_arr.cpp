@@ -50,12 +50,6 @@ int SmartArray::get_size()
         }
 
 
-/*int SmartArray::get_capacity()
-        {
-                return m_capacity;
-        }
-*/
-
 void SmartArray::push_back(int valeue)
 
         {
@@ -101,7 +95,7 @@ void SmartArray::insert(int index, int valeue)
                 {
                         m_arr[i] = m_arr[i - 1];
                 }
-                m_arr[index] = valeue;
+                m_arr[index-1] = valeue;
         }
 
 
