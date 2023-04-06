@@ -12,7 +12,7 @@ void SmartArray::change_capacity()
                 int* newarr = new int[m_capacity];
                 for (int i = 0; i < m_size; i++)
                 {
-                        newarr[i] = arr[i];
+                        newarr[i] = m_arr[i];
                 }
                 delete[] m_arr;
                 m_arr = newarr;
@@ -23,7 +23,7 @@ void SmartArray::change_capacity()
 SmartArray::SmartArray()
         {
                 m_size = 0;
-                m_capacity = size;
+                m_capacity = m_size;
                 m_arr = new int[m_size];
 
         }
@@ -32,7 +32,7 @@ SmartArray::SmartArray(int size)
 {
 	m_size = size;
 	m_capacity = size;
-	m_array = new int[m_size]{};
+	m_arr = new int[m_size]{};
 }
 
 
@@ -44,19 +44,19 @@ int SmartArray::get_valeue(int index)
 }
 
 
-int SmartArrey::get_size()
+int SmartArray::get_size()
         {
                 return m_size;
         }
 
 
-int SmartArrey::get_capacity()
+/*int SmartArray::get_capacity()
         {
                 return m_capacity;
         }
+*/
 
-
-void SmartArrey::push_back(int valeue)
+void SmartArray::push_back(int valeue)
 
         {
                 m_size++;
@@ -74,7 +74,7 @@ void SmartArrey::push_back(int valeue)
         }
 
 
-void SmartArrey::pop_back()
+void SmartArray::pop_back()
         {
                 if (m_size <= 0)
                 {
@@ -83,13 +83,13 @@ void SmartArrey::pop_back()
                 }
                 else
                 {
-                size --;
+                m_size --;
                 }
 
         }
 
 
-void SmartArrey::insert(int index, int valeue)
+void SmartArray::insert(int index, int valeue)
         {
                 assert(m_size >= index);
                 m_size++;
@@ -107,9 +107,9 @@ void SmartArrey::insert(int index, int valeue)
 
 void print_arr(SmartArray &m_arr)
 {
-	for (int i = 0; i < arr.get_size(); i++)
+	for (int i = 0; i < m_arr.get_size(); i++)
 	{
-		std::cout << arr.get_valeue(i) << " ";
+		std::cout << m_arr.get_valeue(i) << " ";
 	}
 	std::cout << std::endl;
 }
