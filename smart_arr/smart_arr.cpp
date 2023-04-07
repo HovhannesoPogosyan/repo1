@@ -37,7 +37,7 @@ SmartArray::SmartArray(int size)
 
 
 //Returns the element at position ‘index’
-int SmartArray::get_valeue(int index)
+int SmartArray::get_value(int index)
 {
 	assert(index < m_size && index >= 0); 
 	return m_arr[index];
@@ -50,7 +50,7 @@ int SmartArray::get_size()
         }
 
 
-void SmartArray::push_back(int valeue)
+void SmartArray::push_back(int value)
 
         {
                 m_size++;
@@ -58,11 +58,11 @@ void SmartArray::push_back(int valeue)
 
                 {
                         change_capacity();
-                        m_arr[m_size-1] = valeue;
+                        m_arr[m_size-1] = value;
                 }
                 else
                 {
-                        m_arr[m_size-1] = valeue;
+                        m_arr[m_size-1] = value;
                 }
 
         }
@@ -83,7 +83,7 @@ void SmartArray::pop_back()
         }
 
 
-void SmartArray::insert(int index, int valeue)
+void SmartArray::insert(int index, int value)
         {
                 assert(m_size >= index);
                 m_size++;
@@ -95,7 +95,7 @@ void SmartArray::insert(int index, int valeue)
                 {
                         m_arr[i] = m_arr[i - 1];
                 }
-                m_arr[index-1] = valeue;
+                m_arr[index-1] = value;
         }
 
 
@@ -103,7 +103,7 @@ void print_arr(SmartArray &m_arr)
 {
 	for (int i = 0; i < m_arr.get_size(); i++)
 	{
-		std::cout << m_arr.get_valeue(i) << " ";
+		std::cout << m_arr.get_value(i) << " ";
 	}
 	std::cout << std::endl;
 }
@@ -126,4 +126,5 @@ SmartArray::~SmartArray()
 {
 	delete[] m_arr;
 }
+
 

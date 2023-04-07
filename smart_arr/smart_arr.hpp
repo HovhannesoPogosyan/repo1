@@ -14,10 +14,10 @@ public:
 	SmartArray(int size);
 
 	int get_size();	
-	int get_valeue(int index);	
-	void push_back(int valeue);
+	int get_value(int index);	
+	void push_back(int value);
 	void pop_back();	
-	void insert(int index, int valeue);
+	void insert(int index, int value);
         int operator[](int index);	
 	~SmartArray();
 };
