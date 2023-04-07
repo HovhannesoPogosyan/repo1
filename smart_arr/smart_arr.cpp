@@ -1,5 +1,6 @@
 #include "smart_arr.hpp"
 
+////Doubles the power of an array when it equals size
 void SmartArray::change_capacity()
 {
         if (m_capacity == 0)
@@ -36,20 +37,20 @@ SmartArray::SmartArray(int size)
 }
 
 
-//Returns the element at position ‘index’
+//Return the index element of the array
 int SmartArray::get_value(int index)
 {
 	assert(index < m_size && index >= 0); 
 	return m_arr[index];
 }
 
-
+//Return size ---arr
 int SmartArray::get_size()
         {
                 return m_size;
         }
 
-
+//adds an element to the array
 void SmartArray::push_back(int value)
 
         {
@@ -67,12 +68,12 @@ void SmartArray::push_back(int value)
 
         }
 
-
+ //deletes the last element of an array
 void SmartArray::pop_back()
         {
                 if (m_size <= 0)
                 {
-                        std::cout << "error 412"<< std::endl;
+                        std::cout << "there is no element in the array"<< std::endl;
                         exit(0);
                 }
                 else
@@ -82,7 +83,7 @@ void SmartArray::pop_back()
 
         }
 
-
+//Inserting a new element into the array at the position "index" specified by "value
 void SmartArray::insert(int index, int value)
         {
                 assert(m_size >= index);
@@ -98,9 +99,7 @@ void SmartArray::insert(int index, int value)
                 m_arr[index-1] = value;
         }
 
-
-void print_arr(SmartArray &m_arr)
-{
+//Printing an array element
 	for (int i = 0; i < m_arr.get_size(); i++)
 	{
 		std::cout << m_arr.get_value(i) << " ";
@@ -121,7 +120,7 @@ int SmartArray::operator[](int index)
 }
 
 
-
+// deletes the dynamic array
 SmartArray::~SmartArray()
 {
 	delete[] m_arr;
