@@ -5,8 +5,8 @@ void SmartArray::change_capacity()
 {
         if (m_capacity == 0)
         {
-                m_capacity++;i
-		m_arr = new int[m_capacity]
+                m_capacity++;
+		m_arr = new int[m_capacity];
         }
         else if(m_capacity != 0)
         {
