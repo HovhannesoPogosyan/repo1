@@ -5,19 +5,26 @@ void SmartArray::change_capacity()
 {
         if (m_capacity == 0)
         {
-                m_capacity++;
+                m_capacity++;i
+		m_arr = new int[m_capacity]
         }
         else if(m_capacity != 0)
         {
                 m_capacity *= 2;
-                int* newarr = new int[m_capacity];
-                for (int i = 0; i < m_size; i++)
-                {
-                        newarr[i] = m_arr[i];
-                }
-                delete[] m_arr;
-                m_arr = newarr;
+		arr_copy();
         }
+}
+
+//copy constructor
+void SmartArray::arr_copy()
+{
+	int* tmp_arr = new int[m_capacity];
+	for (int i = 0; i < m_size; i++)
+	{
+		tmp_arr[i] = m_arr[i];
+	}
+	delete[] m_arr;
+	m_arr = tmp_arr;
 }
 
 

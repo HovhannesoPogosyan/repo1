@@ -9,6 +9,8 @@ private:
 	int m_capacity;
 	//Doubles the power of an array when it equals size	
 	void change_capacity();
+	//copy constructor
+	void arr_copy();
 public:
 	SmartArray();
 	SmartArray(int size);
