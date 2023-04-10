@@ -100,9 +100,12 @@ void SmartArray::insert(int index, int value)
         }
 
 //Printing an array element
-	for (int i = 0; i < m_arr.get_size(); i++)
+void print_arr(SmartArray &arr)
+{
+
+	for (int i = 0; i < arr.get_size(); i++)
 	{
-		std::cout << m_arr.get_value(i) << " ";
+		std::cout << arr.get_value(i) << " ";
 	}
 	std::cout << std::endl;
 }
