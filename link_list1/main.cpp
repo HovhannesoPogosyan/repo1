@@ -12,6 +12,7 @@ int main()
 	std::cout << list.get_size() << std::endl;
 	list.print();
 	list.insert(1, 47);
+	list.insert(3,11);
 	list.print();
 
 	list.pop_back();

@@ -114,23 +114,19 @@ int link_list::pop_back()
 }
 
 //copy constructor
-link_list::link_list(const link_list& list_cop)
+link_list::link_list(const link_list& list_copy)
 {
-	size = list_cop.size;
+	assert(this != &list_copy);
+	size = 0;
 	first = nullptr;
-	if (list_cop.first != nullptr)
+	node* n_list_copy = list_copy.first;
+	for (int i = 0; i < list_copy.size; i++)
 	{
-		first = new node(list_cop.first->data);
-		node* n = first;
-		node* n_arg = list_cop.first->next;
-		while (n_arg != nullptr)
-		{
-			node* element = new node(n_arg->data);
-			n->next = element;
-			n = n->next;
-			n_arg = n_arg->next;
-		}
+		this->push_back(n_list_copy->data);
+		n_list_copy = n_list_copy->next;
 	}
+
+
 }
 
 
