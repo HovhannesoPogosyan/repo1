@@ -73,14 +73,9 @@ int queue::dequeue()
  //function to show the element at front
 int&  queue::Front()
 {
-	if ( isempty() )
-	{
-		std::cout<<"queue is Empty"<<std::endl;
-	}
-	else
-	{
-  		return front->data;  //"Element at front is"
-	}
+	assert(size != 0 && "Segmentation fault");
+  	return front->data;  //"Element at front is"
+
 }
 
  //function to show the element at rear
@@ -90,10 +85,10 @@ int&  queue::Rear()
         {
                 std::cout<<"queue is Empty"<<std::endl;
         }
-        else
-        {
+//        else
+//        {
                 return rear->data;  //"Element at queue is"
-        }
+//        }
 }
 
 // Function to Display the queue
