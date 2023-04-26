@@ -2,8 +2,8 @@ This project is a work of the c++ standard library queue container.It removes th
 
 
 
-1.To compile the project, write make in vim
+1.To compile the project, write make in vim.
 
-2. write make run in vim to run the project
+2. write make run in vim to run the project.
 
-3.To delete intermediate files of the project, write make clean in vim
+3.To delete intermediate files of the project, write make clean in vim.
