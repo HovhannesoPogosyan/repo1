@@ -1,5 +1,5 @@
 #include <iostream>
-#include "smart_arr.hpp"
+#include "vector_stack.hpp"
 
 int main()
 {

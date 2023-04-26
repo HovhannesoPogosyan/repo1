@@ -1,4 +1,4 @@
-#include "smart_arr.hpp"
+#include "vector_stack.hpp"
 
 ////Doubles the power of an stack when it equals size
 void stack::change_capacity()
