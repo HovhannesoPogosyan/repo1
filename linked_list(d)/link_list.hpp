@@ -1,30 +1,30 @@
 #include <iostream>
 #include <cassert>
 
-//template <typename T>
+template <typename T>
 class node
 {
 public:
 
-//	T data;
-        int data;
-        node* next;
-	node* prev;
+	T data;
+//        int data;
+        node<T>* next;
+	node<T>* prev;
 //	node(int data);
 public:
-	node(int data)
+	node(T data)
 	{
 		this->data=data;
 		this->prev=this->next=nullptr;
 	}
 };
 
- //template <typename T>
+template <typename T>
 class linked_List
 {
 private:
-	node* first;
-	node* last;
+	node<T>* first;
+	node<T>* last;
 	int m_size;
 public:
 	linked_List()
@@ -32,12 +32,59 @@ public:
 		first = last = nullptr;
 		int m_size = 0;
 	}
-	//Return size ---list
+	
+	//Sorts the elements of the List object in ascending order using the bubble sort method.
+	void bubble_sort()
+	{
+		T tmp;
+		node<T>* ptr;
+		for(int i = 0; i < m_size-1; i++)
+		{
+			ptr = first;
+			for(int j = 0; j < m_size - i - 1; j++)
+			{
+				if(ptr->data > ptr->next->data)
+				{
+					tmp = ptr->data;
+					ptr->data=ptr->next->data;
+					ptr->next->data=tmp;
+				}
+				ptr=ptr->next;
+			}
+		}
+	}
+	//Sorts the elements of the List object in ascending order using the insertion sort method.
+	void insertion_sort()
+     	{
+    		node<T>* ptr1 = first->next;
+                node<T>* ptr2;
+                T tmp;
+                for (int i = 1; i < m_size; i++)
+                {
+                        ptr2 = ptr1;
+                        while (ptr2->prev)
+                        {
+                                if (ptr2->data < ptr2->prev->data)
+                                {
+					   tmp = ptr2->data;
+                                        ptr2->data=ptr2->prev->data;
+                                        ptr2->prev->data=tmp;
+
+                                }
+                                ptr2 = ptr2->prev;
+                        }
+                        ptr1 = ptr1->next;
+                }
+	}
+		
+
+	//Returns the number of items in the list.
 	int get_size()
 	{
                 return m_size;
         }
 
+	//Returns a bool value, ie whether its size = 0.
 	bool is_empty()
 	{
                if (m_size == 0)
@@ -47,7 +94,7 @@ public:
                return false;
         }
 	 //Returns a reference to the first element in the List object.
-/*        T& front()
+        T& front()
         {
                 return first->data;
         }
@@ -60,10 +107,10 @@ public:
 
 
 	
-*/	
-	node* push_front(int data)
+	//adds an element to the list from the beginning
+	node<T>* push_front(T data)
 	{
-		node* ptr = new node(data);
+		node<T>* ptr = new node<T>(data);
 		ptr->next=first;
 		if (first != nullptr)
 		{
@@ -77,10 +124,11 @@ public:
 		m_size++;
 		return ptr;
 	}
-
-	node* push_bask(int data)
+	
+	//adds an element to the list from the end
+	node<T>* push_back(T data)
         {
-                node* ptr = new node(data);
+                node<T>* ptr = new node<T>(data);
                 ptr->prev=last;
                 if (last != nullptr)
                 {
@@ -98,7 +146,7 @@ public:
 	//Printing an list element
 	void print()
 	{
-        	node* n = first;
+        	node<T>* n = first;
         	while (n != nullptr)
         	{
                 	std::cout << n->data << " ";
@@ -106,6 +154,8 @@ public:
         	}
         	std::cout << std::endl;
 	}
+
+	//deletes an element in the list from the beginning
 	void pop_front()
 	{
 		if(first == nullptr)
@@ -114,7 +164,7 @@ public:
 			return ;
 		}
 
-		node* ptr=first->next;
+		node<T>* ptr=first->next;
 		if(ptr != nullptr)
 		{
 			ptr->prev=nullptr;
@@ -127,7 +177,7 @@ public:
 		first = ptr;
 		m_size--;
 	}	
-	//deletes the last element of an list
+	//deletes an element from the end in the list
 	void pop_back()
 	  {
                 if(last == nullptr)
@@ -136,7 +186,7 @@ public:
                         return ;
                 }
 
-                node* ptr=last->prev;
+                node<T>* ptr=last->prev;
                 if(ptr != nullptr)
                 {
                         ptr->next=nullptr;
@@ -150,11 +200,29 @@ public:
                 m_size--;
         }
 
+	
+	//Reverses the order of the elements in the List object.
 
+	void reverse()
+	{
+		T tmp;
+		node<T>* n1 = first;
+		node<T>* n2 = last;
+		for (int i = 0; i < m_size / 2; i++)
+		{
+			tmp = n1->data;
+			n1->data = n2->data;
+			n2->data = tmp;
+			n1 = n1->next;
+			n2 = n2->prev;
+		}
+	}
+
+	//Destroys a List object with all its elements.
 	~linked_List()
 	{
-        node* n = first;
-        node* next;
+        node<T>* n = first;
+        node<T>* next;
         while (n != nullptr)
         {
                 next = n->next;
@@ -166,3 +234,6 @@ public:
 	}
 
 };
+
+
+
