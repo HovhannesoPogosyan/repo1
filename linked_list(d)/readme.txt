@@ -1,21 +1,25 @@
-This project is a work of the c++ standard library queue container.It removes the previously added element from the queue container.
+This project is an implementation of the std::list container from the c++ standard library. Each element contains three fields. two reference fields (references to the previous and next element in the sequence of elements) and one data field.
 
-The container list supports the following operations:
--get_size - returns the number of elements;
--is_empty - indicates whether the list is empty or not;
--front - returns a reference to the first element;;
--back ֊ returns a reference to the last element;
--push_front - inserts a new element at the beginning of the list;
--push_back - inserts a new element at the end of the list;
--pop_front - removes the first element of the list;
--pop_back - removes the last element of the list;
--insert - inserts a new element before the element at the specified position;
--reverse - reverses the order of the elements.
+action list:
+-get_size -Returns the number of items in the list;
+-is_empty -/Returns a bool value, ie whether its size = 0;
+-front - Returns a reference to the first element in the List object;
+-back ֊ Returns a reference to the last element in the List object;
+-push_front - adds an element to the list from the beginning
+;
+-push_back - adds an element to the list from the end;
+-pop_front - deletes an element in the list from the beginnin;
+-pop_back -deletes an element from the end in the list
+ ;
+
+-reverse - Reverses the order of the elements in the List object.
+-bubble_sort - Sorts the elements of the List object in ascending order using the bubble sort method.
+
+-insertion_sort  -  Sorts the elements of the List object in ascending order using the insertion sort method.
 
 
+1.To compile the project, write make in vim(terminal)
 
-1.To compile the project, write make in vim
+2. write make run in vim(terminal) to run the project
 
-2. write make run in vim to run the project
-
-3.To delete intermediate files of the project, write make clean in vim
+3.To delete intermediate files of the project, write make clean in vim(terminal)
