@@ -121,8 +121,14 @@ public:
         			{
                 			cu.decode(cu.fetch());
                 			cu.execute();
-					std::cout<< ram.memory[34]<<std::endl;
         			}
+			  //      std::cout<< ram.memory[34]<<std::endl;
+
+                         for (int i = 0; i < 128; i++)
+	                         {
+        		                 std::cout<< ram.memory[i]<<std::endl;
+                        	 }
+
 		}
 
 };
