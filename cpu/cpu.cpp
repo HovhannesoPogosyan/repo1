@@ -108,7 +108,7 @@ class Cpu
 public:
         void load(int inst_list[], int size)
 		{
-        		for (int i = 0; i < size && i < 32; i++)
+        		for (int i = 0; i < size && i < 34; i++)
         			{
                 			ram.write(i, inst_list[i]);
                 			ram.inst_cnt++;
@@ -123,8 +123,8 @@ public:
                 			cu.execute();
 	
         			}
+			  //  shows the memory content
 			 //      std::cout<< ram.memory[34]<<std::endl;
-
 			 for (int i = 0; i < 128; i++)
 			 {
       			 std::cout<< ram.memory[i]<<std::endl;
@@ -138,8 +138,9 @@ int main()
 {
 	Ram ram;
 	Cpu cpu;
- //       ram.memory[32] = 10;
-   //     ram.memory[33] = 5;
+	Cantrol_Unit cu;
+       // ram.memory[32] = 10;
+       // ram.memory[33] = 5;
         int list[] = {1'34'32'33,
                      2'35'32'33,
                      3'36'32'33,
