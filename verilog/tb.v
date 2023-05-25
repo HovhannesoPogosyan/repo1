@@ -3,7 +3,7 @@ module top();
 
 reg [31:0] in1;
 reg [31:0] in2;
-wire [31:0] out;
+wire [32:0] out;
 
 full_add add_test(.in1(in1), .in2(in2), .out(out));
 
@@ -13,10 +13,10 @@ initial begin
 end
 
 initial begin
-    in1 = 126; 
+    in1 = 8996; 
     in2 = 1004; 
     #1;
-    $display("%d +%d=%d", in1, in2, out);
+    $display("%d+%d=%d", in1, in2, out);
     in1 = 2563; 
     in2 = 5487; 
     #1;
