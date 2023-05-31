@@ -11,7 +11,7 @@ reg [24:0] cnt;
 reg [1:0] state;
 
 always @(posedge clk) begin
-	if (cnt == 25'd250000) begin
+	if (cnt == 25'd2500000) begin
 		cnt <= 0;
 		state <= state + 1;
 	end
@@ -22,14 +22,12 @@ end
 
 always @(posedge clk) begin
 	if (rst) begin
-		led_1 <= 1'b0;
-		led_2 <= 1'b0;
-		led_3 <= 1'b0;
-		led_4 <= 1'b0;
-	end
-end
-
-always @(posedge clk) begin
+                led_1 <= 1'b0;
+                led_2 <= 1'b0;
+                led_3 <= 1'b0;
+                led_4 <= 1'b0;
+        end
+	else
 	case (state)
 		2'b00: begin
 			led_1 <= 1'b1;
@@ -57,6 +55,6 @@ always @(posedge clk) begin
 		end
 		default: state <= 1'b0;
 	endcase
+	
 end
-
 endmodule
