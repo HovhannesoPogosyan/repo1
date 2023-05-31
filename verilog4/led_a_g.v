@@ -12,7 +12,7 @@ output reg led_g;
 
 
 reg [24:0] cnt;
-reg [1:0] state;
+	reg [3:0] state;
 
 always @(posedge clk) begin
 	if (cnt == 25'd2500000) begin
