@@ -26,8 +26,8 @@ end
 always #1 clk = ~clk;
 
 initial begin
-    #1000000000;
-    $display("%d %d %d %d %d %d %d %d %d", led_a, led_b, led_c, led_d, led_e, led_f, led_g);
+    #10;
+    $display("%d %d %d %d %d %d %d", led_a, led_b, led_c, led_d, led_e, led_f, led_g);
     $finish;
 end
 

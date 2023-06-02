@@ -1,0 +1,75 @@
+$date
+	Thu Jun  1 23:24:33 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module top $end
+$var wire 1 ! led_g $end
+$var wire 1 " led_f $end
+$var wire 1 # led_e $end
+$var wire 1 $ led_d $end
+$var wire 1 % led_c $end
+$var wire 1 & led_b $end
+$var wire 1 ' led_a $end
+$var reg 1 ( clk $end
+$var reg 1 ) rst $end
+$scope module b $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst $end
+$var reg 25 * cnt [24:0] $end
+$var reg 1 ' led_a $end
+$var reg 1 & led_b $end
+$var reg 1 % led_c $end
+$var reg 1 $ led_d $end
+$var reg 1 # led_e $end
+$var reg 1 " led_f $end
+$var reg 1 ! led_g $end
+$var reg 4 + state [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx +
+bx *
+0)
+0(
+x'
+x&
+x%
+x$
+x#
+x"
+x!
+$end
+#1000
+1!
+1"
+1#
+1$
+1%
+1&
+1'
+1(
+#2000
+0(
+#3000
+1(
+#4000
+0(
+#5000
+1(
+#6000
+0(
+#7000
+1(
+#8000
+0(
+#9000
+1(
+#10000
+0(
