@@ -12,11 +12,8 @@ output reg led_g;
 
 
 reg [24:0] cnt;
-<<<<<<< HEAD
 reg [3:0] state;
-=======
-	reg [3:0] state;
->>>>>>> 62443d8afa0e3fc87d5674f1dd2d21ab9f4b0d36
+
 
 always @(posedge clk) begin
 	if (cnt == 25'd1125000) begin
@@ -36,11 +33,11 @@ always @(posedge clk) begin
                 led_b <= 1'b0;
                 led_c <= 1'b0;
                 led_d <= 1'b0;
-		led_e <= 1'b0;
-		led_f <= 1'b0;
-		led_g <= 1'b0;
-		state <= 0;
-		cnt <= 0;
+		        led_e <= 1'b0;
+		        led_f <= 1'b0;
+		        led_g <= 1'b0;
+		        state <= 0;
+		        cnt <= 0;
 
 
         end
