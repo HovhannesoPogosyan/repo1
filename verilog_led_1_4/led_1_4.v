@@ -53,7 +53,13 @@ always @(posedge clk) begin
 		        led_3 <= 1'b0;
 		        led_4 <= 1'b1;
 		end
-		default: state <= 1'b0;
+		default:begin
+			led_1 <= 1'b0;
+                        led_2 <= 1'b0;
+                        led_3 <= 1'b0;
+                        led_4 <= 1'b0;
+                end
+
 	endcase
 	
 end

@@ -23,23 +23,23 @@ end
 always #1 clk = ~clk;
 
 initial begin
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
-    #1000000000;
+    #10;
     $display("%d %d %d %d", led_1, led_2, led_3, led_4);
     $finish;
 end
