@@ -36,7 +36,7 @@ initial begin
 repeat (2) @(posedge clk);
 we = 1;
 
-for(i=0; i<2**DEPTH;i = i + 1)begin
+for(i=0; i<2**DEPTH-1;i = i + 1)begin
         repeat(1) @(posedge clk)addr = i;i_data = i + 10;
 end
 
@@ -44,7 +44,7 @@ repeat (2) @(posedge clk);
 we = 0;
 repeat (2) @(posedge clk);
 
-for(i=0; i<2**DEPTH;i = i + 1)begin
+for(i=0; i<DEPTH-1;i = i + 1)begin
         repeat(1) @(posedge clk)addr = i;
 end
 end
