@@ -36,8 +36,8 @@ always @(posedge clk) begin
 		        led_e <= 1'b0;
 		        led_f <= 1'b0;
 		        led_g <= 1'b0;
-		        state <= 0;
-		        cnt <= 0;
+		       
+		       
 
 
         end
