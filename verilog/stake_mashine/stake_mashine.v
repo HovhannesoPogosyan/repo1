@@ -1,5 +1,5 @@
 //(we=1)permission and button=1 to change the lit led
-module statek mashine (clk, rst, button, we, led_1, led_2, led_3, led_4);
+module statek_mashine (clk, rst, button, we, led_1, led_2, led_3, led_4);
 
 input clk;
 input rst;
@@ -55,8 +55,15 @@ always @(posedge clk) begin
 		        led_3 <= 1'b0;
 		        led_4 <= 1'b1;
 		end
-		default: state <= 1'b0;
-end
+		default:  begin
+                        led_1 <= 1'b0;
+                        led_2 <= 1'b0;
+                        led_3 <= 1'b0;
+                        led_4 <= 1'b1;
+                end
+
+
 	endcase
+	end
 endmodule
 	
