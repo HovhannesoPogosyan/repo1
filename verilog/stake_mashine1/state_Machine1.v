@@ -7,12 +7,12 @@ output reg detect;
 
 reg[1:0] state;
 
-initial
+/*initial
 begin
 state = 2'b00;
-end
+end*/
 
-always@(posedge clk, posedge reset)
+always@(posedge clk)
 begin
 	if (reset)
 	state<=2'b00;
@@ -45,10 +45,10 @@ end
 always@(posedge clk, posedge reset)
 begin
 	if(reset)
-		detect<=0;
+		detect<=1'b0;
 	else if (state == 2'b11)
-		detect<=1;
-	else detect <=0;
+		detect<=1'b1;
+	else detect <=1'b0;
 end
 
 endmodule
